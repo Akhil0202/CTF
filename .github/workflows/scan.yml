@@ -26,6 +26,8 @@ jobs:
             --config=p/security-audit \
             --config=p/owasp-top-ten \
             --config=p/secrets \
+            --exclude .github \
+            --exclude semgrep.json \
             --severity=WARNING \
             --json > semgrep.json
 
