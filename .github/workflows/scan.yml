@@ -42,3 +42,11 @@ jobs:
         with:
           name: scan-results
           path: semgrep.json
+
+      - name: Print Summary
+        run: |
+          echo "Total findings:"
+          jq '.results | length' semgrep.json
+          echo "Finding IDs:"
+          jq -r '.results[].check_id' semgrep.json
+
